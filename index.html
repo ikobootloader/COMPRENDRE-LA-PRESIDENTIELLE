@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comprendre l'élection présidentielle — l'essentiel, sans parti pris</title>
+<meta name="description" content="Comment fonctionne l'élection présidentielle française : le scrutin, le rôle réel du président, les familles politiques, comment s'inscrire et voter. Information neutre et vérifiable.">
+<style>
+  :root{
+    --paper:#f6f2e9;
+    --paper-2:#fbf8f1;
+    --ink:#1d1c1a;
+    --ink-soft:#4a4843;
+    --line:#d8d0bf;
+    --bleu:#13386b;
+    --bleu-clair:#e7edf6;
+    --rouge:#9d2b2b;
+    --rouge-clair:#f4e7e4;
+    --focus:#13386b;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+    --sans:"Avenir Next","Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+    --maxw:780px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:var(--sans);font-size:18px;line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+    background:
+      radial-gradient(circle at 15% 10%, rgba(19,56,107,.04), transparent 45%),
+      radial-gradient(circle at 85% 90%, rgba(157,43,43,.035), transparent 45%);
+  }
+  a{color:var(--bleu);text-underline-offset:3px;text-decoration-thickness:1px}
+  a:focus-visible,button:focus-visible,summary:focus-visible{
+    outline:3px solid var(--focus);outline-offset:3px;border-radius:2px
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+
+  header.hero{border-bottom:1px solid var(--line);
+    background:linear-gradient(180deg,var(--paper-2),var(--paper));padding:54px 0 40px}
+  .kicker{font-family:var(--sans);font-weight:700;letter-spacing:.16em;
+    text-transform:uppercase;font-size:12.5px;color:var(--rouge);margin:0 0 14px}
+  h1{font-family:var(--serif);font-weight:600;line-height:1.08;
+    font-size:clamp(34px,7vw,52px);margin:0 0 16px;letter-spacing:-.01em}
+  .lede{font-size:clamp(18px,2.4vw,21px);color:var(--ink-soft);margin:0;max-width:60ch}
+
+  .neutralite{margin-top:28px;padding:16px 18px;border:1px solid var(--line);
+    border-left:4px solid var(--bleu);background:var(--paper-2);border-radius:6px;
+    font-size:15.5px;color:var(--ink-soft)}
+  .neutralite strong{color:var(--ink)}
+
+  .calendrier-bloc{margin-top:30px;display:flex;flex-wrap:wrap;gap:14px;align-items:stretch}
+  .countdown{flex:1 1 240px;border:1px solid var(--line);border-radius:8px;
+    background:var(--bleu);color:#fff;padding:18px 20px}
+  .countdown .num{font-family:var(--serif);font-size:44px;line-height:1;font-weight:600}
+  .countdown .lbl{font-size:13px;letter-spacing:.1em;text-transform:uppercase;opacity:.85;margin-top:6px}
+  .countdown .sub{font-size:13px;opacity:.8;margin-top:10px;line-height:1.4}
+  .fenetre{flex:1 1 240px;border:1px solid var(--line);border-radius:8px;
+    background:var(--paper-2);padding:18px 20px;font-size:15px}
+  .fenetre b{display:block;font-family:var(--serif);font-size:19px;margin-bottom:2px}
+  .fenetre .prov{display:inline-block;margin-top:10px;font-size:12.5px;
+    background:var(--rouge-clair);color:var(--rouge);padding:3px 9px;border-radius:20px;font-weight:600}
+
+  nav.sommaire{position:sticky;top:0;z-index:10;background:rgba(246,242,233,.92);
+    backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+  nav.sommaire ul{list-style:none;margin:0 auto;max-width:var(--maxw);padding:10px 16px;
+    display:flex;flex-wrap:wrap;gap:7px 5px;justify-content:center}
+  nav.sommaire a{white-space:nowrap;text-decoration:none;font-size:14px;font-weight:600;
+    color:var(--ink-soft);padding:7px 12px;border-radius:20px;border:1px solid transparent}
+  nav.sommaire a:hover{background:var(--bleu-clair);color:var(--bleu)}
+
+  main{padding:18px 0 40px}
+  section{padding:42px 0;border-bottom:1px solid var(--line)}
+  section:last-of-type{border-bottom:none}
+  .secnum{font-family:var(--serif);font-style:italic;color:var(--rouge);font-size:18px}
+  h2{font-family:var(--serif);font-weight:600;font-size:clamp(25px,4.5vw,33px);
+    margin:6px 0 14px;line-height:1.15;letter-spacing:-.01em}
+  h3{font-family:var(--sans);font-weight:700;font-size:18px;margin:26px 0 8px}
+  p{margin:0 0 14px}
+  ul.clean{padding-left:0;list-style:none;margin:0 0 14px}
+  ul.clean li{position:relative;padding-left:26px;margin-bottom:10px}
+  ul.clean li::before{content:"";position:absolute;left:4px;top:11px;width:8px;height:8px;
+    background:var(--bleu);border-radius:50%}
+
+  .deux-col{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:18px 0}
+  @media(max-width:620px){.deux-col{grid-template-columns:1fr}}
+  .carte{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:var(--paper-2)}
+  .carte h3{margin-top:0;display:flex;align-items:center;gap:8px}
+  .carte.oui h3{color:var(--bleu)}
+  .carte.non h3{color:var(--rouge)}
+  .pastille{font-size:13px;font-weight:800}
+
+  .asavoir{border:1px solid var(--line);border-left:4px solid var(--rouge);
+    background:var(--rouge-clair);border-radius:6px;padding:14px 16px;margin:18px 0;
+    font-size:15.5px;color:var(--ink-soft)}
+  .asavoir strong{color:var(--ink)}
+
+  .quiz{display:grid;gap:12px;margin-top:18px}
+  details.idee{border:1px solid var(--line);border-radius:8px;background:var(--paper-2);
+    padding:0;overflow:hidden}
+  details.idee summary{list-style:none;cursor:pointer;padding:16px 18px;font-weight:600;
+    display:flex;justify-content:space-between;gap:12px;align-items:center}
+  details.idee summary::-webkit-details-marker{display:none}
+  details.idee summary .verdict{font-size:13px;font-weight:800;letter-spacing:.05em;
+    text-transform:uppercase;padding:4px 10px;border-radius:20px;flex:none}
+  .vrai{background:var(--bleu-clair);color:var(--bleu)}
+  .faux{background:var(--rouge-clair);color:var(--rouge)}
+  details.idee .rep{padding:0 18px 16px;color:var(--ink-soft);font-size:15.5px}
+  details.idee[open] summary{border-bottom:1px solid var(--line)}
+
+  /* ---- Familles politiques ---- */
+  .familles{display:grid;gap:12px;margin-top:20px}
+  details.famille{border:1px solid var(--line);border-left:4px solid var(--bleu);
+    border-radius:8px;background:var(--paper-2);overflow:hidden}
+  details.famille summary{list-style:none;cursor:pointer;padding:16px 18px;
+    display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+  details.famille summary::-webkit-details-marker{display:none}
+  details.famille summary .nom{font-family:var(--serif);font-size:20px;font-weight:600;line-height:1.2}
+  details.famille summary .pos{font-size:12px;font-weight:700;letter-spacing:.06em;
+    text-transform:uppercase;color:var(--ink-soft);flex:none;text-align:right;max-width:42%}
+  details.famille[open] summary{border-bottom:1px solid var(--line)}
+  details.famille .corps{padding:6px 18px 18px}
+  .champ{margin-top:14px}
+  .champ .et{display:block;font-size:12.5px;font-weight:800;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--bleu);margin-bottom:3px}
+  .champ p{margin:0;font-size:15.5px;color:var(--ink-soft)}
+  .debat{margin-top:14px;border-top:1px dashed var(--line);padding-top:12px}
+  .debat .ligne{font-size:15px;margin:0 0 6px}
+  .debat .ligne b{color:var(--ink)}
+  .forces{margin-top:14px;font-size:14.5px;background:var(--bleu-clair);
+    border-radius:6px;padding:10px 13px;color:var(--ink-soft)}
+  .forces b{color:var(--bleu)}
+
+  .sources li{margin-bottom:8px}
+  footer{padding:34px 0 60px;color:var(--ink-soft);font-size:14.5px}
+  footer .rappel{border-top:2px solid var(--bleu);padding-top:18px;margin-top:8px}
+  .maj{font-size:13px;opacity:.75}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="kicker">Élection présidentielle française · 2027</p>
+    <h1>Comprendre l'élection,<br>avant de voter.</h1>
+    <p class="lede">Comment fonctionne le scrutin, ce que peut vraiment faire un président, quelles sont les grandes familles politiques, comment s'inscrire et voter. L'essentiel pour décider par soi-même.</p>
+
+    <div class="neutralite">
+      <strong>Cet outil ne dit pas pour qui voter.</strong> Il n'évoque aucun candidat et ne porte aucun jugement de valeur sur les idées présentées. Il explique <em>comment</em> l'élection fonctionne et décrit les courants en présence de la manière la plus équilibrée possible, à partir de sources publiques vérifiables.
+    </div>
+
+    <div class="calendrier-bloc">
+      <div class="countdown" aria-live="polite">
+        <div class="num" id="cd-num">—</div>
+        <div class="lbl">jours, environ</div>
+        <div class="sub" id="cd-sub">avant la date la plus précoce envisagée pour le 1<sup>er</sup> tour</div>
+      </div>
+      <div class="fenetre">
+        <b>Au printemps 2027</b>
+        Selon les règles constitutionnelles, le 1<sup>er</sup> tour tomberait le dimanche 11 ou 18 avril 2027, et le 2<sup>d</sup> tour le 25 avril ou le 2 mai.
+        <span class="prov">Dates non encore officialisées</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="sommaire" aria-label="Sommaire">
+  <ul>
+    <li><a href="#scrutin">Le scrutin</a></li>
+    <li><a href="#role">Le rôle du président</a></li>
+    <li><a href="#familles">Les familles politiques</a></li>
+    <li><a href="#idees">Idées reçues</a></li>
+    <li><a href="#voter">Qui peut voter</a></li>
+    <li><a href="#inscription">S'inscrire</a></li>
+    <li><a href="#parrainages">Les parrainages</a></li>
+    <li><a href="#jour-j">Le jour du vote</a></li>
+    <li><a href="#sources">Vérifier</a></li>
+  </ul>
+</nav>
+
+<main class="wrap">
+
+  <section id="scrutin">
+    <span class="secnum">01</span>
+    <h2>Comment on élit le président</h2>
+    <p>Le président de la République est élu au <strong>suffrage universel direct</strong> : chaque électeur vote directement pour un candidat, sans intermédiaire. Le mandat dure cinq ans (le « quinquennat »).</p>
+    <p>L'élection se joue en <strong>deux tours</strong>, à deux semaines d'écart :</p>
+    <ul class="clean">
+      <li><strong>1<sup>er</sup> tour :</strong> tous les candidats sont en lice. Un candidat ne serait élu dès ce tour qu'en réunissant la majorité absolue des suffrages exprimés (plus de la moitié) — ce qui n'est jamais arrivé sous la V<sup>e</sup> République.</li>
+      <li><strong>2<sup>d</sup> tour :</strong> seuls restent les <strong>deux candidats arrivés en tête</strong>. Celui qui obtient le plus de voix est élu.</li>
+    </ul>
+    <p>C'est ce mécanisme qui explique l'expression « voter utile » au premier tour, et le choix souvent réduit à deux noms au second.</p>
+    <div class="asavoir">
+      <strong>Bon à savoir :</strong> les dates exactes ne sont pas encore fixées. C'est le président en exercice qui les arrête par décret ; la fenêtre indiquée plus haut découle de l'article&nbsp;7 de la Constitution. À vérifier sur les sources officielles le moment venu.
+    </div>
+  </section>
+
+  <section id="role">
+    <span class="secnum">02</span>
+    <h2>À quoi sert vraiment le président</h2>
+    <p>On prête souvent au président tous les pouvoirs. En réalité, la Constitution répartit les rôles : beaucoup de décisions du quotidien relèvent du <strong>gouvernement</strong> et du <strong>Parlement</strong>, pas du chef de l'État seul. Le comprendre aide à juger un programme à sa juste portée.</p>
+    <div class="deux-col">
+      <div class="carte oui">
+        <h3><span class="pastille">✓</span> Ce que le président peut faire</h3>
+        <ul class="clean">
+          <li>Nommer le Premier ministre et, sur sa proposition, les ministres.</li>
+          <li>Présider le Conseil des ministres.</li>
+          <li>Dissoudre l'Assemblée nationale et provoquer de nouvelles élections législatives.</li>
+          <li>Promulguer les lois votées par le Parlement.</li>
+          <li>Être chef des armées et négocier les traités.</li>
+          <li>Soumettre certains textes à référendum.</li>
+          <li>Exercer le droit de grâce, à titre individuel.</li>
+        </ul>
+      </div>
+      <div class="carte non">
+        <h3><span class="pastille">✕</span> Ce qu'il ne fait pas seul</h3>
+        <ul class="clean">
+          <li>Voter les lois : ce sont l'Assemblée nationale et le Sénat (le Parlement).</li>
+          <li>Décider seul le budget : la loi de finances est votée par le Parlement.</li>
+          <li>Conduire l'action quotidienne : c'est le rôle du gouvernement, dirigé par le Premier ministre.</li>
+          <li>Gouverner sans tenir compte de la majorité parlementaire.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="asavoir">
+      <strong>Le cas de la « cohabitation » :</strong> si l'Assemblée nationale est dominée par une majorité opposée au président, ce dernier perd l'essentiel de la main sur la politique intérieure, qui revient alors au Premier ministre. La présidentielle ne décide donc pas de tout : les élections législatives comptent tout autant.
+    </div>
+  </section>
+
+  <section id="familles">
+    <span class="secnum">03</span>
+    <h2>Les grandes familles politiques</h2>
+    <p>Plutôt que de lister des partis — qui changent de nom, fusionnent et se divisent sans cesse — voici les grands <strong>courants d'idées</strong> qui structurent la vie politique française, avec leurs racines, ce qu'ils défendent, et le débat qu'ils suscitent.</p>
+
+    <div class="neutralite">
+      <strong>Comment lire cette section.</strong> Chaque famille est présentée de la même manière, sans hiérarchie ni jugement. Pour les « implications », on distingue toujours <em>ce que mettent en avant ses partisans</em> et <em>ce que lui opposent ses critiques</em>. Chaque famille est par ailleurs traversée de courants internes : ces résumés simplifient nécessairement.
+    </div>
+
+    <div class="familles">
+
+      <details class="famille">
+        <summary><span class="nom">Gauche radicale &amp; anticapitaliste</span><span class="pos">Gauche de rupture</span></summary>
+        <div class="corps">
+          <div class="champ"><span class="et">Racines</span><p>Mouvement ouvrier du XIX<sup>e</sup> siècle, socialisme révolutionnaire et marxisme. Le communisme français naît en 1920 de la scission du congrès de Tours, au sein du mouvement socialiste. L'extrême gauche s'y rattache par le courant trotskiste.</p></div>
+          <div class="champ"><span class="et">Idées maîtresses</span><p>Priorité à l'égalité réelle, critique du capitalisme et de la finance, rôle central de l'État et des services publics, place forte donnée aux luttes sociales et écologiques.</p></div>
+          <div class="champ"><span class="et">Sur l'économie</span><p>Forte redistribution, hausse des salaires et du SMIC, fiscalité très progressive sur les hauts revenus et patrimoines, extension du secteur public, planification écologique.</p></div>
+          <div class="champ"><span class="et">Sur la société</span><p>Défense des droits sociaux et des minorités, accueil plutôt ouvert des étrangers, féminisme et droits LGBT+ ; débats internes sur la laïcité.</p></div>
+          <div class="debat">
+            <p class="ligne"><b>Ses partisans</b> y voient le seul moyen de réduire vraiment les inégalités et de répondre à l'urgence écologique.</p>
+            <p class="ligne"><b>Ses critiques</b> mettent en doute le coût budgétaire et l'effet des mesures sur l'emploi et l'investissement, et redoutent un poids excessif de l'État.</p>
+          </div>
+          <div class="forces"><b>Aujourd'hui :</b> La France insoumise (LFI) et le Parti communiste (PCF) ; à l'extrême gauche, Lutte ouvrière et le NPA.</div>
+        </div>
+      </details>
+
+      <details class="famille">
+        <summary><span class="nom">Gauche social-démocrate &amp; écologiste</span><span class="pos">Gauche de gouvernement</span></summary>
+        <div class="corps">
+          <div class="champ"><span class="et">Racines</span><p>Socialisme réformiste (Jean Jaurès, puis le Parti socialiste refondé en 1971) qui choisit la transformation par les réformes plutôt que la rupture. L'écologie politique émerge dans les années 1970 et se structure avec Les Verts dans les années 1980.</p></div>
+          <div class="champ"><span class="et">Idées maîtresses</span><p>Justice sociale dans le cadre de l'économie de marché et de l'Union européenne ; pour les écologistes, la transition environnementale devient la priorité organisatrice.</p></div>
+          <div class="champ"><span class="et">Sur l'économie</span><p>État régulateur, protection sociale solide, investissement dans la transition écologique, fiscalité redistributive mais marché préservé.</p></div>
+          <div class="champ"><span class="et">Sur la société</span><p>Progressisme sur les questions de société, attention à l'environnement, aux libertés et aux droits.</p></div>
+          <div class="debat">
+            <p class="ligne"><b>Ses partisans</b> revendiquent une voie crédible et responsable, conciliant solidarité et réalisme économique.</p>
+            <p class="ligne"><b>Ses critiques</b> la jugent tantôt trop timide (à la gauche de la gauche), tantôt trop dépensière (à droite) ; les écologistes sont parfois accusés de sous-estimer l'emploi industriel.</p>
+          </div>
+          <div class="forces"><b>Aujourd'hui :</b> le Parti socialiste (PS) et Les Écologistes (ex-EELV). Réunis en 2024 avec LFI et le PCF dans la coalition du Nouveau Front populaire.</div>
+        </div>
+      </details>
+
+      <details class="famille">
+        <summary><span class="nom">Centre &amp; libéralisme</span><span class="pos">Centre / « bloc central »</span></summary>
+        <div class="corps">
+          <div class="champ"><span class="et">Racines</span><p>Héritage du centrisme et de la démocratie chrétienne, et du libéralisme. Le « macronisme » (2017) revendique le dépassement du clivage gauche-droite — le fameux « en même temps ».</p></div>
+          <div class="champ"><span class="et">Idées maîtresses</span><p>Économie de marché régulée, attachement à l'Union européenne, réformisme libéral, valorisation du travail et du mérite.</p></div>
+          <div class="champ"><span class="et">Sur l'économie</span><p>Libéralisme économique, recherche de compétitivité, allègements d'impôts ciblés, réformes structurelles (travail, retraites), maîtrise des dépenses publiques.</p></div>
+          <div class="champ"><span class="et">Sur la société</span><p>Plutôt progressiste et pragmatique, attaché à la laïcité et à la sécurité, sans projet de société tranché.</p></div>
+          <div class="debat">
+            <p class="ligne"><b>Ses partisans</b> valorisent le pragmatisme, l'ouverture et le refus des « extrêmes ».</p>
+            <p class="ligne"><b>Ses critiques</b> y voient un libéralisme insuffisamment social, ou un positionnement trop flou qui brouille les repères.</p>
+          </div>
+          <div class="forces"><b>Aujourd'hui :</b> Renaissance, le MoDem et Horizons, réunis dans la coalition « Ensemble pour la République ».</div>
+        </div>
+      </details>
+
+      <details class="famille">
+        <summary><span class="nom">Droite républicaine</span><span class="pos">Droite libérale-conservatrice</span></summary>
+        <div class="corps">
+          <div class="champ"><span class="et">Racines</span><p>Deux héritages mêlés : le gaullisme (issu de la Résistance et de la figure du général de Gaulle, attaché à l'autorité de l'État et à la souveraineté) et le libéralisme de la droite modérée. Structurée dans l'UMP (2002), devenue Les Républicains (2015).</p></div>
+          <div class="champ"><span class="et">Idées maîtresses</span><p>Autorité de l'État régalien, ordre et sécurité, nation, libéralisme économique, attachement aux valeurs traditionnelles et à la famille.</p></div>
+          <div class="champ"><span class="et">Sur l'économie</span><p>Baisse des impôts et des dépenses publiques, libéralisme et soutien aux entreprises, valorisation du travail, recul de l'âge de départ à la retraite.</p></div>
+          <div class="champ"><span class="et">Sur la société</span><p>Fermeté sur l'immigration et la sécurité, attachement à l'identité et aux racines, prudence sur certaines évolutions sociétales.</p></div>
+          <div class="debat">
+            <p class="ligne"><b>Ses partisans</b> mettent en avant la responsabilité budgétaire, l'ordre et la continuité républicaine.</p>
+            <p class="ligne"><b>Ses critiques</b> dénoncent des politiques jugées favorables aux plus aisés, et s'inquiètent des rapprochements d'une partie de ses élus avec l'extrême droite.</p>
+          </div>
+          <div class="forces"><b>Aujourd'hui :</b> Les Républicains (LR). Une partie de leurs élus s'est alliée au RN lors des législatives de 2024, provoquant une crise interne. Côté souverainiste : Debout la France.</div>
+        </div>
+      </details>
+
+      <details class="famille">
+        <summary><span class="nom">Droite nationale</span><span class="pos">Classée à l'extrême droite</span></summary>
+        <div class="corps">
+          <div class="champ"><span class="et">Racines</span><p>Tradition nationaliste française. Le Front national, fondé en 1972, devient le Rassemblement national en 2018, avec une stratégie de « normalisation » visant à élargir son audience. Reconquête (2021) s'y ajoute sur un axe plus identitaire et culturel.</p></div>
+          <div class="champ"><span class="et">Idées maîtresses</span><p>Priorité à la nation et à la souveraineté, forte restriction de l'immigration (« priorité nationale »), sécurité, identité, méfiance envers l'Union européenne.</p></div>
+          <div class="champ"><span class="et">Sur l'économie</span><p>Orientation variable : le RN met en avant un « social-souverainisme » (protection des Français modestes, protectionnisme, défense de certains services publics), tandis que Reconquête est plus libéral.</p></div>
+          <div class="champ"><span class="et">Sur la société</span><p>Restriction de l'immigration et de ses effets perçus, laïcité mobilisée notamment contre l'islamisme (lecture contestée), conservatisme.</p></div>
+          <div class="debat">
+            <p class="ligne"><b>Ses partisans</b> invoquent la souveraineté, la sécurité et la protection des classes populaires.</p>
+            <p class="ligne"><b>Ses critiques</b> alertent sur les risques pour l'égalité des droits, contestent la faisabilité économique de certaines mesures et rappellent les racines historiques du mouvement.</p>
+          </div>
+          <div class="forces"><b>Aujourd'hui :</b> le Rassemblement national (RN) et Reconquête. Le classement « extrême droite » est celui des politologues et de l'administration ; le RN le conteste et se présente comme un parti de gouvernement.</div>
+        </div>
+      </details>
+
+    </div>
+
+    <div class="asavoir">
+      <strong>L'axe gauche-droite ne dit pas tout.</strong> C'est une convention commode, mais d'autres lignes de partage traversent ces familles : le rapport au marché et à l'État, l'attachement ou la méfiance envers l'Union européenne, le clivage entre progressisme et conservatisme sur les questions de société, ou encore la place accordée à l'écologie. Un même électeur peut se retrouver de plusieurs côtés selon le sujet.
+    </div>
+    <p class="maj">Composition des forces arrêtée début 2026 et susceptible d'évoluer fortement d'ici 2027. À recouper avec des sources d'actualité fiables.</p>
+  </section>
+
+  <section id="idees">
+    <span class="secnum">04</span>
+    <h2>Vrai ou faux : quelques idées reçues</h2>
+    <p>Touchez chaque affirmation pour découvrir la réponse.</p>
+    <div class="quiz">
+      <details class="idee">
+        <summary><span>« Le président vote et écrit les lois. »</span><span class="verdict faux">Faux</span></summary>
+        <div class="rep">Le président <em>promulgue</em> les lois, mais ce sont les députés et les sénateurs qui les discutent et les votent. Sans majorité au Parlement, un président a beaucoup de mal à appliquer son programme.</div>
+      </details>
+      <details class="idee">
+        <summary><span>« Un candidat peut gagner dès le premier tour. »</span><span class="verdict vrai">En théorie, vrai</span></summary>
+        <div class="rep">C'est possible si un candidat obtient plus de 50&nbsp;% des suffrages exprimés au premier tour. Mais cela ne s'est jamais produit sous la V<sup>e</sup> République : il y a presque toujours un second tour.</div>
+      </details>
+      <details class="idee">
+        <summary><span>« N'importe qui peut se présenter facilement. »</span><span class="verdict faux">Faux</span></summary>
+        <div class="rep">Il faut d'abord réunir 500 parrainages d'élus, répartis dans au moins 30 départements ou collectivités. Ce filtre limite fortement le nombre de candidats (voir la section « Les parrainages »).</div>
+      </details>
+      <details class="idee">
+        <summary><span>« Si je suis Français et majeur, je peux voter automatiquement. »</span><span class="verdict faux">Pas toujours</span></summary>
+        <div class="rep">Il faut aussi <strong>être inscrit sur les listes électorales</strong>. L'inscription est automatique pour beaucoup de jeunes à 18 ans, mais pas dans tous les cas — notamment après un déménagement. Mieux vaut vérifier (voir « S'inscrire »).</div>
+      </details>
+    </div>
+  </section>
+
+  <section id="voter">
+    <span class="secnum">05</span>
+    <h2>Qui peut voter</h2>
+    <p>Pour voter à l'élection présidentielle, il faut réunir quatre conditions :</p>
+    <ul class="clean">
+      <li>Être de <strong>nationalité française</strong> (l'élection présidentielle n'est pas ouverte aux ressortissants d'autres pays de l'UE, contrairement aux municipales et européennes).</li>
+      <li>Avoir <strong>au moins 18 ans</strong> la veille du scrutin.</li>
+      <li>Jouir de ses <strong>droits civils et politiques</strong>.</li>
+      <li>Être <strong>inscrit sur les listes électorales</strong>.</li>
+    </ul>
+  </section>
+
+  <section id="inscription">
+    <span class="secnum">06</span>
+    <h2>S'inscrire pour voter</h2>
+    <p>C'est l'étape la plus souvent oubliée. Sans inscription, pas de vote — même en étant français et majeur.</p>
+    <h3>La date limite</h3>
+    <p>En règle générale, on peut s'inscrire jusqu'au <strong>6<sup>e</sup> vendredi précédant le 1<sup>er</sup> tour</strong>. Pour une inscription <strong>en ligne</strong>, la limite est un peu plus tôt (le mercredi précédant ce vendredi). Des dérogations permettent de s'inscrire plus tard dans des cas précis : on vient d'avoir 18 ans sans avoir été recensé, déménagement professionnel récent, naturalisation, recouvrement des droits civiques…</p>
+    <h3>Le cas des jeunes</h3>
+    <p>Si vous avez fait votre recensement citoyen à 16 ans, vous êtes en principe <strong>inscrit automatiquement</strong> à votre majorité. Dans le doute, vérifiez : le recensement tardif ou absent peut empêcher l'inscription d'office.</p>
+    <h3>Comment faire</h3>
+    <ul class="clean">
+      <li><strong>En ligne</strong>, sur service-public.gouv.fr (le plus simple).</li>
+      <li><strong>En mairie</strong>, en personne ou par courrier.</li>
+    </ul>
+    <p>Documents généralement demandés : une pièce d'identité, un justificatif de domicile de moins de trois mois, et le formulaire Cerfa n° 12669 (n° 12670 pour les ressortissants de l'UE concernés par d'autres scrutins).</p>
+    <div class="asavoir">
+      <strong>Important :</strong> les dates précises pour 2027 dépendront de la date officielle du scrutin, encore inconnue. Vérifiez le calendrier et votre propre inscription sur les sites officiels listés plus bas, sans attendre les derniers jours.
+    </div>
+  </section>
+
+  <section id="parrainages">
+    <span class="secnum">07</span>
+    <h2>Les 500 parrainages : pourquoi si peu de candidats ?</h2>
+    <p>Avant de figurer sur le bulletin, un candidat doit franchir un filtre : réunir le soutien formel d'un certain nombre d'élus. C'est ce qu'on appelle les « parrainages » (ou « présentations »).</p>
+    <ul class="clean">
+      <li>Il faut <strong>500 signatures</strong> d'élus habilités (maires, parlementaires, conseillers départementaux et régionaux, etc.).</li>
+      <li>Elles doivent provenir d'au moins <strong>30 départements ou collectivités d'outre-mer</strong> différents.</li>
+      <li><strong>Pas plus de 50</strong> (un dixième) ne peuvent venir d'un même département ou collectivité.</li>
+      <li>Chaque élu ne peut parrainer <strong>qu'un seul candidat</strong>, et son choix est définitif.</li>
+      <li>Les parrainages sont publiés par le Conseil constitutionnel, au fil de leur réception.</li>
+    </ul>
+    <div class="asavoir">
+      <strong>Un parrainage n'est pas un soutien au programme :</strong> un élu peut parrainer un candidat dont il ne partage pas les idées, simplement pour qu'il puisse concourir et que le débat soit pluraliste. Le but du dispositif est d'éviter un nombre trop élevé de candidatures.
+    </div>
+  </section>
+
+  <section id="jour-j">
+    <span class="secnum">08</span>
+    <h2>Le jour du vote</h2>
+    <ul class="clean">
+      <li>Présentez-vous à votre <strong>bureau de vote</strong> (indiqué sur la carte électorale et vérifiable en ligne), muni d'une <strong>pièce d'identité</strong>.</li>
+      <li>Prenez plusieurs bulletins et une enveloppe, passez par <strong>l'isoloir</strong> : le secret du vote est obligatoire.</li>
+      <li>Déposez votre enveloppe dans l'urne ; on confirme « a voté » et vous signez.</li>
+      <li><strong>Absent le jour J ?</strong> Vous pouvez faire une <strong>procuration</strong> pour qu'un autre électeur vote à votre place. La démarche se fait en ligne ou en gendarmerie/commissariat, idéalement bien à l'avance.</li>
+    </ul>
+  </section>
+
+  <section id="sources">
+    <span class="secnum">09</span>
+    <h2>Vérifier et aller plus loin</h2>
+    <p>Cet outil est volontairement simple. Pour les informations officielles, à jour et faisant foi, consultez directement :</p>
+    <ul class="clean sources">
+      <li><a href="https://www.service-public.gouv.fr" target="_blank" rel="noopener">service-public.gouv.fr</a> — vérifier son inscription, s'inscrire, faire une procuration.</li>
+      <li><a href="https://www.vie-publique.fr" target="_blank" rel="noopener">vie-publique.fr</a> — fonctionnement des institutions et de l'élection.</li>
+      <li><a href="https://www.conseil-constitutionnel.fr" target="_blank" rel="noopener">conseil-constitutionnel.fr</a> — parrainages, validation des candidatures, proclamation des résultats.</li>
+      <li><a href="https://www.insee.fr" target="_blank" rel="noopener">insee.fr</a> — le répertoire électoral unique (listes électorales).</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <div class="rappel">
+    <p><strong>Une intention : aider à décider, pas influencer.</strong> Cette page se limite au fonctionnement de l'élection et à une présentation équilibrée des courants. Pour comparer les programmes, formez-vous une opinion à partir de plusieurs sources et des documents publiés par les candidats eux-mêmes.</p>
+    <p class="maj">Information générale, sans valeur officielle. Les dates 2027 sont prévisionnelles tant qu'elles n'ont pas été fixées par décret, et la composition des forces politiques peut évoluer. Pensez à vérifier les sources officielles et d'actualité.</p>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var cible = new Date("2027-04-11T08:00:00+02:00");
+    var num = document.getElementById("cd-num");
+    var sub = document.getElementById("cd-sub");
+    function maj(){
+      var jours = Math.ceil((cible - new Date())/86400000);
+      if(jours > 0){ num.textContent = jours.toLocaleString("fr-FR"); }
+      else { num.textContent = "—"; sub.textContent = "Le scrutin a eu lieu ou approche : consultez les sources officielles."; }
+    }
+    maj();
+    setInterval(maj, 3600000);
+  })();
+</script>
+</body>
+</html>
