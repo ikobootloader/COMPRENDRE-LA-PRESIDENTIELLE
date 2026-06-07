@@ -156,7 +156,7 @@
     <div class="calendrier-bloc">
       <div class="countdown" aria-live="polite">
         <div class="num" id="cd-num">—</div>
-        <div class="lbl">jours, environ</div>
+        <div class="lbl">jours restants</div>
         <div class="sub" id="cd-sub">avant la date la plus précoce envisagée pour le 1<sup>er</sup> tour</div>
       </div>
       <div class="fenetre">
@@ -430,12 +430,21 @@
 
 <script>
   (function(){
-    var cible = new Date("2027-04-11T08:00:00+02:00");
+    var cible = new Date("2027-04-11T00:00:00+02:00");
     var num = document.getElementById("cd-num");
     var sub = document.getElementById("cd-sub");
+    function debutDeJour(date){
+      return new Date(date.getFullYear(), date.getMonth(), date.getDate());
+    }
+    function joursRestantsJusqua(dateCible, maintenant){
+      var aujourdHui = debutDeJour(maintenant);
+      var jourCible = debutDeJour(dateCible);
+      return Math.round((jourCible - aujourdHui) / 86400000);
+    }
     function maj(){
-      var jours = Math.ceil((cible - new Date())/86400000);
+      var jours = joursRestantsJusqua(cible, new Date());
       if(jours > 0){ num.textContent = jours.toLocaleString("fr-FR"); }
+      else if(jours === 0){ num.textContent = "0"; sub.textContent = "Le premier tour est prevu aujourd'hui : verifiez les sources officielles."; }
       else { num.textContent = "—"; sub.textContent = "Le scrutin a eu lieu ou approche : consultez les sources officielles."; }
     }
     maj();
